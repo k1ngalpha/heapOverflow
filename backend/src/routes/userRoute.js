@@ -5,10 +5,10 @@ import { signIn, signUp } from "../auth/authController.js";
 
 const router = express.Router();
 
-//api/user/auth/sign-up
-router.post("/auth/sign-up", signUp);
+//users/signup
+router.post("/signup", signUp);
 
-//api/user/auth/sign-in
-router.get("/auth/sign-in", signIn);
+//users/signin
+router.get("/login", signIn);
 
 export default router;

@@ -1,4 +1,5 @@
-import User from "../models/userModel";
+import User from "../models/userModel.js";
+import bcryptjs from "bcryptjs";
 
 export const signUp = async (req, res) => {
   const { userName, email, password } = req.body;
@@ -14,7 +15,7 @@ export const signUp = async (req, res) => {
     await newUser.save();
     res.status(200).json({ message: "user created successfully" });
   } catch (error) {
-    console.log(`/auth/sign-in error ${error}`);
+    console.log(`/users/signin error ${error}`);
     res.status(500).json({ message: "Internal server error" });
   }
 };
