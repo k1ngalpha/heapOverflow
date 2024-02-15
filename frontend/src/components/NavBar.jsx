@@ -3,7 +3,7 @@ import SearchBar from "./SearchBar";
 const NavBar = () => {
   return (
     <div className="bg-orange-500 border p-3">
-      <div className="bg-red-600 flex justify-start relative">
+      <div className="bg-red-600 flex justify-start items-center relative">
         <img
           className="block h-6 w-6"
           src="../../assets/images/icon.png"

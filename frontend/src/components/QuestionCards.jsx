@@ -6,7 +6,7 @@ const QuestionCards = () => {
         <p>
           Be specific and imagine you’re asking a question to another person.
         </p>
-        <textarea className="border"></textarea>
+        <textarea className="rounded-md shadow-md mt-2 border h-60 w-full"></textarea>
       </div>
 
       <div className="bg-blue-400 mt-2 shadow-lg border rounded-md container p-2">
@@ -15,7 +15,7 @@ const QuestionCards = () => {
           Introduce the problem and expand on what you put in the title. Minimum
           20 characters.
         </p>
-        <textarea className="border"></textarea>
+        <textarea className="rounded-md shadow-md mt-2 border h-60 w-full"></textarea>
       </div>
 
       <div className="bg-blue-400 mt-2 shadow-lg border rounded-md container p-2">
@@ -26,7 +26,7 @@ const QuestionCards = () => {
           Describe what you tried, what you expected to happen, and what
           actually resulted. Minimum 20 characters.
         </p>
-        <textarea className="border"></textarea>
+        <textarea className="rounded-md shadow-md mt-2 border h-60 w-full"></textarea>
       </div>
 
       <div className="bg-blue-400 mt-2 shadow-lg border rounded-md container p-2">
@@ -35,8 +35,11 @@ const QuestionCards = () => {
           Add up to 5 tags to describe what your question is about. Start typing
           to see suggestions.
         </p>
-        <textarea className="border"></textarea>
+        <textarea className="rounded-md shadow-md mt-2 border h-60 w-full"></textarea>
       </div>
+      <button className="bg-blue-500 p-2 text-white rounded-md mt-3">
+        Review your question
+      </button>
     </>
   );
 };
