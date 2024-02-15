@@ -5,7 +5,11 @@ const questionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  question: {
+  body: {
+    type: String,
+    required: true,
+  },
+  tags: {
     type: String,
     required: true,
   },

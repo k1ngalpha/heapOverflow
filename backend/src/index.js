@@ -20,7 +20,7 @@ app.use(
 );
 
 app.use("/users", userRoute);
-app.use("/api", addQuestion);
+app.use("/questions", addQuestion);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running in port ${process.env.PORT}`);
