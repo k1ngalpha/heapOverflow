@@ -8,6 +8,7 @@ export const addQuestions = createAsyncThunk(
     try {
       const response = await fetch(`${API_BASE_URL}/questions/ask`, {
         method: "POST",
+        credentials: true,
         headers: {
           "Content-Type": "application/json",
         },

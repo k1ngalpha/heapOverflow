@@ -7,6 +7,9 @@ import { loginUser } from "../redux/auth/loginUser";
 import { useEffect } from "react";
 import { userSelector } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
@@ -16,13 +19,16 @@ const Login = () => {
   const formSubmit = (data) => {
     dispatch(loginUser(data));
   };
-
+  console.log(errorMessage);
   useEffect(() => {
     if (isSuccess) {
-      alert("login successful");
+      alert("Sign in successful");
       navigate("/");
     }
-  });
+    if (isError) {
+      console.log(isError);
+    }
+  }, [isSuccess, navigate, isError, errorMessage]);
 
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
@@ -33,13 +39,19 @@ const Login = () => {
           <div className="space-y-2">
             <h2 className="font-bold">Email</h2>
             <input
-              {...register("email")}
+              {...register("email", {
+                required: "The email is not a valid email address.",
+              })}
               type="email"
               className="border rounded-md p-1 w-full"
             />
             <h2 className="font-bold">Password</h2>
             <input
-              {...register("password")}
+              {...register("password", {
+                required: "Password is required",
+                minLength: 6,
+                message: "The password must be atleast 6 characters long",
+              })}
               type="password"
               className="border rounded-md p-1 w-full"
             />
