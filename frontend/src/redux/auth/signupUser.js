@@ -7,6 +7,7 @@ export const signupUser = createAsyncThunk(
     try {
       const response = await fetch(`${API_BASE_URL}/users/signup`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },

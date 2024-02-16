@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   isSuccess: false,
+  isLogin: false,
   errorMessage: "",
 };
 

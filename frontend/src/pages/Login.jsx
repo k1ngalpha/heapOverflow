@@ -26,9 +26,10 @@ const Login = () => {
 
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
-      <div className="flex justify-center p-4 mt-24 mr-4 bg-green-300">
+      <div className="flex justify-center items-center h-screen bg-green-300">
+        {/* <div className="flex justify-center p-4 mt-24 mr-4 bg-green-300"> */}
         {/* <div className="container bg-red-400 max-w-sm px-6 py-4 rounded-md shadow-md border"> */}
-        <div className="container bg-red-400 max-w-sm px-6 py-4 rounded-md shadow-md border">
+        <div className="container bg-red-400 h-70 max-w-80 px-6 py-4 rounded-md shadow-md border">
           <div className="space-y-2">
             <h2 className="font-bold">Email</h2>
             <input

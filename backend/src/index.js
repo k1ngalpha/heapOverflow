@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import addQuestion from "../src/routes/questionRoutes.js";
 import userRoute from "../src/routes/userRoute.js";
+import { verifyToken } from "./auth/verifyToken.js";
+import cookieParser from "cookie-parser";
 
 //.env config
 dotenv.config();
@@ -13,9 +15,11 @@ mongoose.connect(process.env.MONGO_URL).then(console.log("Connected to DB"));
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
+    credentials: true,
   })
 );
 
