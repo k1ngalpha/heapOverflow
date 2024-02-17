@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { signupUser } from "./auth/signupUser";
-import { loginUser } from "./auth/loginUser";
+import { loginUser, signupUser } from "../controller/userController";
 
 const initialState = {
   email: "",

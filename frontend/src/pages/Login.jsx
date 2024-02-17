@@ -3,12 +3,12 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../redux/auth/loginUser";
 import { useEffect } from "react";
 import { userSelector } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { loginUser } from "../controller/userController";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();

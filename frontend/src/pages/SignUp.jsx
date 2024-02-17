@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
-import { signupUser } from "../redux/auth/signupUser";
+
 import { userSelector } from "../redux/userSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signupUser } from "../controller/userController";
 
 const SignUp = () => {
   const { register, handleSubmit, errors } = useForm();

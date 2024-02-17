@@ -2,9 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import addQuestion from "../src/routes/questionRoutes.js";
+import questionRoute from "../src/routes/questionRoutes.js";
 import userRoute from "../src/routes/userRoute.js";
-import { verifyToken } from "./auth/verifyToken.js";
 import cookieParser from "cookie-parser";
 
 //.env config
@@ -24,7 +23,8 @@ app.use(
 );
 
 app.use("/users", userRoute);
-app.use("/questions", addQuestion);
+//app.use("/questions", questionRoute);
+app.use("/", questionRoute);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running in port ${process.env.PORT}`);

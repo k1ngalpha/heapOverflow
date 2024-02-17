@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { addQuestions } from "../functions/addQuestions";
 import { useDispatch } from "react-redux";
+import { addQuestions } from "../controller/questionsController";
 
 const ReviewQuestion = () => {
   const { register, handleSubmit } = useForm();
@@ -36,7 +36,7 @@ const ReviewQuestion = () => {
           <textarea
             name="body"
             {...register("body")}
-            defaultValue={`${problemDetails} ${expectations}`}
+            defaultValue={`${problemDetails}\n${expectations}`}
             className="rounded-md shadow-md mt-2 border h-60 w-full"
           />
         </div>
