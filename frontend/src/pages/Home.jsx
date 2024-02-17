@@ -3,7 +3,7 @@ import DisplayQuestions from "./displayQuestion";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <div className="p-2 flex gap-2 bg-red-400">
         <div className="bg-green-500 flex items-center justify-between w-full">
           <h1 className="font-semibold">Top Questions</h1>
@@ -16,7 +16,7 @@ const Home = () => {
         </div>
       </div>
       <DisplayQuestions />
-    </>
+    </div>
   );
 };
 export default Home;

@@ -1,16 +1,26 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addQuestions } from "../controller/questionsController";
+import { questionSelector } from "../redux/questionSlice";
+import { useEffect } from "react";
 
 const ReviewQuestion = () => {
   const { register, handleSubmit } = useForm();
   const location = useLocation();
   const { title, problemDetails, expectations, tags } = location.state;
+  const { isSuccess } = useSelector(questionSelector);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const formSubmit = (data) => {
     dispatch(addQuestions(data));
+
+    if (isSuccess) {
+      alert("Question post successful");
+      navigate("/");
+    }
   };
+
   return (
     <form onSubmit={handleSubmit(formSubmit)}>
       <div className="p-2">

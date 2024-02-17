@@ -9,10 +9,12 @@ const questionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tags: {
-    type: String,
-    required: true,
-  },
+  tags: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 });
 
 const Question = mongoose.model("Question", questionSchema);
