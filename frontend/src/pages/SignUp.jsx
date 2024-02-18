@@ -32,8 +32,8 @@ const SignUp = () => {
   return (
     <>
       <form onSubmit={handleSubmit(formSubmit)}>
-        <div className="flex justify-center p-2 mt-4 mr-4 bg-green-300">
-          <div className="container bg-red-400 max-w-sm px-6 py-4 rounded-md shadow-md border">
+        <div className="flex justify-center  p-2 mt-20 mr-4 ">
+          <div className="container bg-white max-w-sm px-6 py-4 rounded-md shadow-md border">
             <h1 className="font-bold mb-1">Create your account</h1>
 
             <p className="mb-2 text-sm">

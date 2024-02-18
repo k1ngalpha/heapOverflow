@@ -20,7 +20,7 @@ const DisplayQuestions = () => {
           {questions.map((data) => (
             <>
               <Link
-                to={`/questions/${data._id}/${data.title}`}
+                to={`/questions/${data._id}/${encodeURIComponent(data.title)}`}
                 key={data._id}
                 className="font-semibold text-2xl"
               >

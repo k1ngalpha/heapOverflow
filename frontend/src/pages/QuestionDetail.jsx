@@ -9,6 +9,7 @@ const QuestionDetail = () => {
   const { id, title } = useParams();
   const { questionById, isSuccess } = useSelector(questionSelector);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(displayQuestionById({ id, title }));
     console.log(questionById);
