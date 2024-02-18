@@ -25,7 +25,7 @@ export const addQuestions = createAsyncThunk(
   }
 );
 
-//Display addl question
+//Display all question
 export const displayAllQuestions = createAsyncThunk(
   "/",
   async (_, thunkAPI) => {
@@ -49,6 +49,25 @@ export const displayAllQuestions = createAsyncThunk(
       }
     } catch (error) {
       console.log(`/displayQuestion = ${error}`);
+      thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
+//display one question
+export const displayQuestionById = createAsyncThunk(
+  "/questions/fetchById",
+  async ({ id, title }, thunkAPI) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/questions/${id}/${title}`, {
+        method: "GET",
+      });
+      if (response.ok) {
+        const res = await response.json();
+        return res;
+      }
+    } catch (error) {
+      console.log(`questions/:id/:title = ${error}`);
       thunkAPI.rejectWithValue(error.response.data);
     }
   }

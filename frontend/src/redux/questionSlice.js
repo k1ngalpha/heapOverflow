@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   addQuestions,
   displayAllQuestions,
+  displayQuestionById,
 } from "../controller/questionsController";
 
 const initialState = {
   questions: [],
+  questionById: null,
   isLoading: false,
   isError: false,
   isSuccess: false,
@@ -31,11 +33,10 @@ export const questionSlice = createSlice({
       .addCase(addQuestions.rejected, (state, { payload }) => {
         state.isError = true;
         state.isLoading = false;
-        state.errorMessage = payload.message;
+        state.errorMessage = payload;
       })
       ///
       .addCase(displayAllQuestions.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.questions = payload;
         state.isLoading = false;
         state.isSuccess = true;
@@ -45,6 +46,21 @@ export const questionSlice = createSlice({
         state.isError = true;
       })
       .addCase(displayAllQuestions.rejected, (state, { payload }) => {
+        state.isError = true;
+        state.isLoading = false;
+        state.errorMessage = payload;
+      })
+      ///
+      .addCase(displayQuestionById.fulfilled, (state, { payload }) => {
+        state.questionById = payload;
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.isError = false;
+      })
+      .addCase(displayQuestionById.pending, (state) => {
+        state.isError = true;
+      })
+      .addCase(displayQuestionById.rejected, (state, { payload }) => {
         state.isError = true;
         state.isLoading = false;
         state.errorMessage = payload;

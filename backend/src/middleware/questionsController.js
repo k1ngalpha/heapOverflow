@@ -25,3 +25,14 @@ export const displayAllQuestions = async (req, res) => {
     res.status(500).json({ message: "Error fetching question" });
   }
 };
+
+export const displayQuestionById = async (req, res) => {
+  const { id, title } = req.params;
+  try {
+    const question = await Question.findOne({ _id: id, title: title });
+    res.status(200).json(question);
+  } catch (error) {
+    res.status(400).json({ message: "Error getting the questions" });
+    console.log(`/questions/id/title - ${error}`);
+  }
+};

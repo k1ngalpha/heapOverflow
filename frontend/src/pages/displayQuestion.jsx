@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { displayAllQuestions } from "../controller/questionsController";
 import { questionSelector } from "../redux/questionSlice";
+import { Link } from "react-router-dom";
 
 const DisplayQuestions = () => {
   const [data, setData] = useState([]);
@@ -18,9 +19,13 @@ const DisplayQuestions = () => {
         <div>
           {questions.map((data) => (
             <>
-              <h1 key={data._id} className="font-semibold text-2xl">
+              <Link
+                to={`/questions/${data._id}/${data.title}`}
+                key={data._id}
+                className="font-semibold text-2xl"
+              >
                 {data.title}
-              </h1>
+              </Link>
               {/* <p>{data.body}</p> */}
 
               <div className="bg-pink-600 flex  gap-1">

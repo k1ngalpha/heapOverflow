@@ -8,6 +8,7 @@ import ReviewQuestion from "./components/ReviewQuestion";
 
 import { useSelector } from "react-redux";
 import { userSelector } from "../src/redux/userSlice";
+import QuestionDetail from "./pages/QuestionDetail";
 
 function App() {
   const { isSuccess, isError, isLoading, errorMessage } =
@@ -27,6 +28,8 @@ function App() {
               />
             </>
           )}
+          {/* <Route path="/questions/:id/:title" element={<QuestionDetail />} /> */}
+          <Route path="/questions/:id/:title" element={<QuestionDetail />} />
           <Route path="/users/signup" element={<SignUp />} />
           <Route path="/users/login" element={<Login />} />
           <Route path="*" element={<Home />} />

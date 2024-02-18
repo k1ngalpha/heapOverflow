@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DisplayQuestions from "./displayQuestion";
+import DisplayQuestions from "./DisplayQuestion";
 
 const Home = () => {
   return (
